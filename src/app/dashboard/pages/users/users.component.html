@@ -1,0 +1,40 @@
+<form [formGroup]="usersForm" class="grip">
+
+  <div class="field">
+    <mat-form-field appearance="outline">
+      <mat-label>Nombre</mat-label>
+      <input formControlName="name" matInput type="text" name="name">
+      <mat-error *ngIf="nameControl.hasError('required')">
+        Este Campo es requerido
+      </mat-error>
+      <mat-error *ngIf="nameControl.hasError('minlength')">
+        El campo debe tener al menos {{ nameControl.errors?.['minlength'].requiredLength }}
+      </mat-error>
+    </mat-form-field>
+
+  </div>
+
+  <div class="field">
+    <mat-form-field appearance="outline">
+      <mat-label>Apellido</mat-label>
+      <input formControlName="surname" matInput type="text" name="surname">
+    </mat-form-field>
+  </div>
+
+  <div class="field">
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input formControlName="emailControl" matInput type="email" name="email">
+    </mat-form-field>
+  </div>
+
+  <div class="field">
+    <mat-form-field appearance="outline">
+      <mat-label>Contraseña</mat-label>
+      <input formControlName="passwordControl" matInput type="password" name="password">
+    </mat-form-field>
+  </div>
+</form>
+
+
+
